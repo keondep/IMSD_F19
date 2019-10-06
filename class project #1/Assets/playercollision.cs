@@ -10,6 +10,8 @@ public class playercollision : MonoBehaviour {
         if (collisioninfo.collider.tag == "obstacle")
         {
             move.enabled = false;
+            FindObjectOfType<gamemanager>().Endgame();
+            
         }
     }
         

@@ -9,6 +9,7 @@ public class movement : MonoBehaviour {
     public float jumpforce = 7;
     public LayerMask groundlayers;
     public SphereCollider col;
+
     void FixedUpdate()
 {
 
@@ -35,6 +36,11 @@ public class movement : MonoBehaviour {
         {
             rb.AddForce(Vector3.up * jumpforce , ForceMode.Impulse);
         }
+if (rb.position.y < -1f)
+        {
+            FindObjectOfType<gamemanager>().Endgame();
+        }
+
     }
     private bool IsGrounded()
     {
